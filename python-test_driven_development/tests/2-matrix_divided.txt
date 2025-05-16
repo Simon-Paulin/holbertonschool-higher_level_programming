@@ -1,0 +1,71 @@
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Integer
+-------
+
+.. code-block:: python
+
+    >>> matrix_divided([[9, 18], [27, 36]], 9)
+    [[1.0, 2.0], [3.0, 4.0]]
+
+    >>> matrix_divided([[1, 1], [1, 1]], 1)
+    [[1.0, 1.0], [1.0, 1.0]]
+
+    >>> matrix_divided([[100, 200], [300, 400]], 100.0)
+    [[1.0, 2.0], [3.0, 4.0]]
+
+    >>> matrix_divided([[42]], 7)
+    [[6.0]]
+
+Floats
+------
+
+.. code-block:: python
+
+    >>> matrix_divided([[0.1, 0.2], [0.3, 0.4]], 0.1)
+    [[1.0, 2.0], [3.0, 4.0]]
+
+    >>> matrix_divided([[3.3, 6.6], [9.9, 13.2]], 3.3)
+    [[1.0, 2.0], [3.0, 4.0]]
+
+    >>> matrix_divided([[1.2345, 2.3456], [3.4567, 4.5678]], 1.1111)
+    [[1.11, 2.11], [3.11, 4.11]]
+
+    >>> matrix_divided([[0.0, -0.0], [-0.0, 0.0]], 1)
+    [[0.0, -0.0], [-0.0, 0.0]]
+
+Large
+-----
+
+.. code-block:: python
+
+    >>> matrix_divided([[9, 8, 7], [6, 5, 4], [3, 2, 1]], 3)
+    [[3.0, 2.67, 2.33], [2.0, 1.67, 1.33], [1.0, 0.67, 0.33]]
+
+Errors
+------
+
+.. code-block:: python
+
+    >>> matrix_divided([[1, 2], [3, None]], 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[1, 2], [3, [4]]], 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[1, 2], 3], 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[1, 2], [3, 4]], None)
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+    >>> matrix_divided([], 2)
+    []
