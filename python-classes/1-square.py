@@ -9,8 +9,8 @@ class Square:
     class Square
     '''
 
-
-def __init__(self, size):
-    '''
-    initialised a new square whit size
-    '''
+    def __init__(self, size):
+        '''
+        initialised a new square whit size
+        '''
+        self.__size = size
