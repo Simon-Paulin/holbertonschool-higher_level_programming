@@ -32,6 +32,10 @@ class Square:
         return self.__size
 
     def size(self, value):
+        """
+        Access and update private attribute
+        """
+
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
