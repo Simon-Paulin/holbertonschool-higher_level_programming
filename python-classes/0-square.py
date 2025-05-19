@@ -8,4 +8,4 @@ class Square:
     '''
     class Square
     '''
-    continue
+    pass
