@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-module: 4-square.py
+module: 5-square.py
 
 '''
 
@@ -28,9 +28,11 @@ class Square:
         '''
         return (self.__size * self.__size)
 
+    @property
     def size(self):
         return self.__size
 
+    @size.setter
     def size(self, value):
         """
         Access and update private attribute
