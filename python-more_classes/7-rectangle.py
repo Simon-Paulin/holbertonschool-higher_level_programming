@@ -68,7 +68,7 @@ class Rectangle:
         raise:
             Typeerror : if value is not a interger
             ValueError : if height <= 0
-            '''
+        '''
 
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -105,19 +105,14 @@ class Rectangle:
                 result += "\n"
         return result
 
-
     def __repr__(self):
         '''
         return a string representation of rectangle
         its used for recreate a new instanceby using eval()
-
         exemple:
-                Rectangle (W=3, H=4)
+        Rectangle (W=3, H=4)
         '''
-        return (
-            "Rectangle(width={}, height={})"
-            .format(self.__width, self.__height)
-        )
+    return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
         '''
