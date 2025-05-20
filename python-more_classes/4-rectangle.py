@@ -63,7 +63,7 @@ class Rectangle:
             value (int) : new height to set
         raise:
             Typeerror : if value is not a interger
-            ValueError : if height <= 0
+            ValueError : if height < 0
             '''
 
         if not isinstance(value, int):
@@ -109,7 +109,4 @@ class Rectangle:
         exemple:
                 Rectangle (W=3, H=4)
         '''
-        return (
-            "Rectangle(width={}, height={})"
-            .format(self.__width, self.__height)
-        )
+        return f"Rectangle({self.width}, {self.height})"
