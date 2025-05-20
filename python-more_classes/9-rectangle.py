@@ -24,8 +24,8 @@ class Rectangle:
         TypeError: if widht or height is not a integer
         ValueError: if widht or height is < 0
         '''
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property
@@ -86,7 +86,7 @@ class Rectangle:
         '''
         perimeter of rectangle
         '''
-        if self.__width or self.__height == 0:
+        if self.__width == 0 or self.__height == 0:
             return (0)
         return (2 * (self.__width + self.__height))
 
@@ -121,6 +121,7 @@ class Rectangle:
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         '''
         return a rectangle whit a bigger area
@@ -156,6 +157,5 @@ class Rectangle:
         Returns:
             Rectangle: New 'rectangle' whit equal side size to size
         '''
-
         new_rectangle = cls(size, size)
         return (new_rectangle)
