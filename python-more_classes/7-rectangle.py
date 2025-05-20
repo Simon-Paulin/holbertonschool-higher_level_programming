@@ -8,9 +8,9 @@ its define a class Rectangle whit private attribute and proprety access.
 class Rectangle:
     '''
     class define a rectangle by his width and height
-    add Public Class named  'number_of_instances'
     '''
     number_of_instances = 0
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         '''
@@ -100,10 +100,11 @@ class Rectangle:
 
         result = ""
         for row in range(self.__height):
-            result += "#" * self.__width
+            result += str(self.print_symbol) * self.__width
             if row != self.__height - 1:
                 result += "\n"
         return result
+
 
     def __repr__(self):
         '''
