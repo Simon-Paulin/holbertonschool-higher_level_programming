@@ -21,8 +21,8 @@ class Rectangle:
         TypeError: if widht or height is not a integer
         ValueError: if widht or height is < 0
         '''
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -82,7 +82,7 @@ class Rectangle:
         '''
         perimeter of rectangle
         '''
-        if self.__width or self.__height == 0:
+        if self.__width == 0 or self.__height == 0:
             return (0)
         return (2 * (self.__width + self.__height))
 
