@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''
-module: 1-rectangle.py
-its define a class Rectangle whit private attribute and prprety access.
+module: 3-rectangle.py
+its define a class Rectangle whit private attribute and proprety access.
 '''
 
 
