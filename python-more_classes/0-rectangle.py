@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-'''
-module: 0-rectangle.py
-'''
+"""
+0-rectangle.py
+Write an class Rectangle that define a rectangle
+"""
 
 
 class Rectangle:
-    '''
-    create a new class called "rectangle"
-    '''
+    """
+    Create a class Rectangle
+    """
     pass
