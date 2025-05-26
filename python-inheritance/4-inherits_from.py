@@ -10,6 +10,10 @@ Write a function that returns
 
 
 def inherits_from(obj, a_class):
+    '''
+    true or false
+    '''
+
     if isinstance(obj, a_class):
         if type(obj) is not a_class:
             return (True)
