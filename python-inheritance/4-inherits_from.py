@@ -11,7 +11,12 @@ Write a function that returns
 
 def inherits_from(obj, a_class):
     '''
-    true or false
+    check if the obj inherited of a_class
+        Argv:
+            obj: to check
+            a_class: class
+        Return:
+            True if its subclass of a_class or False
     '''
 
     if isinstance(obj, a_class):
@@ -19,3 +24,5 @@ def inherits_from(obj, a_class):
             return (True)
         else:
             return (False)
+    else:
+        return (False)
