@@ -5,20 +5,77 @@
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
 
->>> try:
-...     bg.integer_validator("name", "John")
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] name must be an integer
+____________________________________
 
 >>> try:
-...     bg.integer_validator("age", 0)
+...     bg.integer_validator("Name", "John")
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
-[ValueError] age must be greater than 0
+[TypeError] Name must be an integer
+
+____________________________________
 
 >>> try:
-...     bg.integer_validator("distance", -4)
+...     bg.integer_validator("Age", 0)
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
-[ValueError] distance must be greater than 0
+[ValueError] Age must be greater than 0
+
+____________________________________
+
+>>> try:
+...     bg.integer_validator("Distance", -4)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] Distance must be greater than 0
+
+____________________________________
+
+>>> try:
+...     bg.integer_validator("Tuple", (1, 2))
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] Tuple must be an integer
+
+____________________________________
+
+>>> try:
+...     bg.integer_validator("List", [4, 20])
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] List must be an integer
+
+____________________________________
+
+>>> try:
+...     bg.integer_validator("Set", {4, 21})
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] Set must be an integer
+
+____________________________________
+
+>>> try:
+...     bg.integer_validator("Boolean", True)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] Boolean must be an integer
+
+____________________________________
+
+>>> try:
+...     bg.integer_validator("Value", None)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] Value must be an integer
+
+____________________________________
+
+>>> try:
+...     bg.integer_validator("Float", 4.20)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] Float must be an integer
+
+
+____________________________________
