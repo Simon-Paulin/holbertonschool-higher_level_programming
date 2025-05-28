@@ -8,6 +8,7 @@ Create an abstract class named Shape with two abstract methods:
 from abc import ABC, abstractmethod
 from math import pi
 
+
 class Shape(ABC):
     @abstractmethod
     def area(self):
@@ -16,6 +17,7 @@ class Shape(ABC):
     @abstractmethod
     def perimeter(self):
         pass
+
 
 class Circle(Shape):
     def __init__(self, radius):
@@ -26,6 +28,7 @@ class Circle(Shape):
 
     def perimeter(self):
         return 2 * pi * self.__radius
+
 
 class Rectangle(Shape):
     def __init__(self, width, height):
@@ -38,8 +41,9 @@ class Rectangle(Shape):
     def perimeter(self):
         return (2 * (self.__width + self.__height))
 
-    def shape_info(sim):
-        area = sim.area()
-        perimeter = sim.perimeter()
-        print("{}".format(area))
-        print("{}".format(perimeter))
+
+def shape_info(sim):
+    area = sim.area()
+    perimeter = sim.perimeter()
+    print("{}".format(area))
+    print("{}".format(perimeter))
