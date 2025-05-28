@@ -53,5 +53,5 @@ class Rectangle(Shape):
 def shape_info(sim):
     area = sim.area()
     perimeter = sim.perimeter()
-    print("{}".format(area))
-    print("{}".format(perimeter))
+    print("Area: {}".format(area))
+    print("Perimeter: {}".format(perimeter))
