@@ -10,6 +10,10 @@ from math import pi
 
 
 class Shape(ABC):
+    '''
+    Shape Abstract Class
+    '''
+
     @abstractmethod
     def area(self):
         pass
@@ -20,8 +24,12 @@ class Shape(ABC):
 
 
 class Circle(Shape):
+    '''
+    Circle and Rectangle Classes:
+    '''
+
     def __init__(self, radius):
-        self.__radius = radius
+        self.__radius = abs(radius)
 
     def area(self):
         return pi * self.__radius * self.__radius
