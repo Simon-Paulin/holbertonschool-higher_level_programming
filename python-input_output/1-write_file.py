@@ -12,5 +12,5 @@ def write_file(filename="", text=""):
     of characters written
     '''
 
-    with open(filename, encoding="UTF8") as file:
+    with open(filename, "w", encoding="UTF8") as file:
         return (file.write(text))
