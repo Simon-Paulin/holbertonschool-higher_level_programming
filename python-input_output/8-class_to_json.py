@@ -4,7 +4,6 @@
 '''
 
 
-
 def class_to_json(obj):
     '''
     Write a function that returns the dictionary description with
