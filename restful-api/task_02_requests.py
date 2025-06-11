@@ -2,9 +2,12 @@
 '''
 task_02_requests.py
 '''
+import csv
+
 
 import requests
-import csv
+
+
 
 def fetch_and_print_posts():
 
@@ -25,7 +28,7 @@ def fetch_and_save_post():
         for post in posts:
             data_post = {
                 'id': post['id'],
-                'titel': post['titel'],
+                'titel': post['title'],
                 'body': post['body'],
             }
             save_post.append(data_post)
