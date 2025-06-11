@@ -8,18 +8,19 @@ import csv
 import requests
 
 
-
 def fetch_and_print_posts():
 
     r = requests.get('https://jsonplaceholder.typicode.com/posts')
 
     print("Status Code: {}".format(r.status_code))
     if r.status_code == 200:
-            posts = r.json()
-            for post in posts:
-                print("Titles: {}".format(post['title']))
+        posts = r.json()
+        for post in posts:
+            print("Titles: {}".format(post['title']))
+
 
 def fetch_and_save_post():
+
     r = requests.get('https://jsonplaceholder.typicode.com/posts')
 
     if r.status_code == 200:
@@ -37,4 +38,3 @@ def fetch_and_save_post():
             writer = csv.DictWriter(csv_file, fieldnames=col)
             writer.writeheader()
             writer.writerows(save_post)
- 
