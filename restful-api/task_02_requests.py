@@ -19,7 +19,7 @@ def fetch_and_print_posts():
             print("Titles: {}".format(post['title']))
 
 
-def fetch_and_save_post():
+def fetch_and_save_posts():
 
     r = requests.get('https://jsonplaceholder.typicode.com/posts')
 
