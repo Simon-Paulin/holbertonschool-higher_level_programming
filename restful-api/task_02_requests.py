@@ -10,7 +10,7 @@ import requests
 
 def fetch_and_print_posts():
 
-    r = requests.get('https://jsonplaceholder.typicode.com/posts')
+    r = requests.get('https://jsonplaceholder.typicode.com/posts/1')
 
     print("Status Code: {}".format(r.status_code))
     if r.status_code == 200:
@@ -33,6 +33,7 @@ def fetch_and_save_post():
                 'body': post['body'],
             }
             save_post.append(data_post)
+
         with open("post.csv", "w") as csv_file:
             col = ['id', 'title', 'body']
             writer = csv.DictWriter(csv_file, fieldnames=col)
