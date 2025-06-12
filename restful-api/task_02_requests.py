@@ -28,7 +28,7 @@ def fetch_and_save_posts():
         for post in posts:
             data_post = {
                 'id': post['id'],
-                'titel': post['title'],
+                'title': post['title'],
                 'body': post['body'],
             }
             save_post.append(data_post)
