@@ -16,3 +16,4 @@ port = 8000
 server = (host, port)
 
 httpd = HTTPServer(server, Api_Get)
+httpd.serve_forever()
