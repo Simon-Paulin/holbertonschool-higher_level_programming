@@ -31,14 +31,14 @@ class Api_Get(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "application/json")
         self.end_headers()
-        return_status = {"status":"OK"}
+        return_status = {"OK"}
         self.wfile.write(json.dumps(return_status).encode("utf-8"))
 
     def not_found(self):
         self.send_response(404)
         self.send_header("Content-type", "text/plain")
         self.end_headers()
-        self.wfile.write(b"Not Found")
+        self.wfile.write(b"Endpoint not found")
 
 
 host = "localhost"
