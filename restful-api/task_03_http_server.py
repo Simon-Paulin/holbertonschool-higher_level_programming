@@ -11,7 +11,7 @@ class Api_Get(BaseHTTPRequestHandler):
             "/data": self.data,
             "/status": self.status
         }
-        handle = call.get(self.path)
+        handle = call.get(self.path, self.not_found)
         handle()
 
     def root(self):
@@ -31,8 +31,14 @@ class Api_Get(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "application/json")
         self.end_headers()
-        return_status = {"status" : "ok"}
+        return_status = {"status":"ok"}
         self.wfile.write(json.dumps(return_status).encode("utf-8"))
+
+    def not_found(self):
+        self.send_response(404)
+        self.send_header("Content-type", "text/plain")
+        self.end_header()
+        self.wfile.write(b"404 Not Found")
 
 
 host = "localhost"
