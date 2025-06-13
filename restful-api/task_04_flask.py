@@ -10,28 +10,38 @@ users = {
 
 @app.route("/")
 def home():
-    return "<p>Welcome to the Flask API!</p>"
+    return "Welcome to the Flask API!"
 
 @app.route("/data")
-def data():  
+def data():
     return jsonify(users)
 
 @app.route("/status")
 def status():
-    return "<p>OK</p>"
+    return "OK"
 
 @app.route("/users/<username>")
 def users_list(username):
     if username in users:
         return jsonify(users[username])
     else:
-        return "<p>error: User not found"
+        return "User not found", 404
 
 
 @app.route("/add_user", methods=["POST"])
 def add_user():
-    if request.method == "POST":
-        return jsonify(users["john"])
+    data = request.get_json()
+    username = data.get("username")
+    if not username:
+        return "Username is required", 400
+    if username in users:
+        return "Username already exists", 400
+    users[username] = {
+        "name": data.get("name"),
+        "age": data.get("age"),
+        "city": data.get("city")
+    }
+    return jsonify(users[username]), 201
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
