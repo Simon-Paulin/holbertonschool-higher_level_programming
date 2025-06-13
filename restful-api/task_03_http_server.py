@@ -9,7 +9,8 @@ class Api_Get(BaseHTTPRequestHandler):
         call = {
             "/": self.root,
             "/data": self.data,
-            "/status": self.status
+            "/status": self.status,
+            "/info": self.info,
         }
         handle = call.get(self.path, self.not_found)
         handle()
@@ -29,16 +30,26 @@ class Api_Get(BaseHTTPRequestHandler):
 
     def status(self):
         self.send_response(200)
-        self.send_header("Content-type", "application/json")
+        self.send_header("Content-type", "text/plain")
         self.end_headers()
-        return_status = {"OK"}
-        self.wfile.write(json.dumps(return_status).encode("utf-8"))
+        self.wfile.write(b"OK")
 
     def not_found(self):
         self.send_response(404)
         self.send_header("Content-type", "text/plain")
         self.end_headers()
         self.wfile.write(b"Endpoint not found")
+
+    def info(self):
+        self.send_response(200)
+        self.send_header("Content-type", "text/plain")
+        self.end_headers()
+        return_info = {
+            "version": "1.0", "description":
+            "A simple API built with http.server"
+            }
+        self.wfile.write(json.dumps(return_info).encode("utf-8"))
+
 
 
 host = "localhost"
