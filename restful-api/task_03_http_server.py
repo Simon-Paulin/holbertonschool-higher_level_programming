@@ -28,7 +28,7 @@ class Api_Get(BaseHTTPRequestHandler):
         self.wfile.write(json.dumps(data_js).encode("utf-8"))
 
     def status(self):
-        self.send_response(404)
+        self.send_response(200)
         self.send_header("Content-type", "text/plain")
         self.end_headers()
         self.wfile.write(b"Status 404")
