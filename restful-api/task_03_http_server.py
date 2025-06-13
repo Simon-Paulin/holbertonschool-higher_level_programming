@@ -29,9 +29,10 @@ class Api_Get(BaseHTTPRequestHandler):
 
     def status(self):
         self.send_response(200)
-        self.send_header("Content-type", "text/plain")
+        self.send_header("Content-type", "application/json")
         self.end_headers()
-        self.wfile.write(b"Status 404")
+        return_status = {"status" : "ok"}
+        self.wfile.write(json.dumps(return_status).encode("utf-8"))
 
 
 host = "localhost"
