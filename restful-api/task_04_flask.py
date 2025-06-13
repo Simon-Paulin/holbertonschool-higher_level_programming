@@ -13,8 +13,7 @@ def home():
     return "<p>Welcome to the Flask API!</p>"
 
 @app.route("/data")
-def data():
-   
+def data():  
     return jsonify(users)
 
 @app.route("/status")
@@ -23,7 +22,11 @@ def status():
 
 @app.route("/users/<username>")
 def users_list(username):
-    return jsonify(users[username])
+    if username in users:
+        return jsonify(users[username])
+    else:
+        return "<p>error: User not found"
+
 
 @app.route("/add_user", methods=["POST"])
 def add_user():
