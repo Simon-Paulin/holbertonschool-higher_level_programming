@@ -3,6 +3,7 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
+
 class Api_Get(BaseHTTPRequestHandler):
     def do_GET(self):
         call = {
@@ -31,6 +32,7 @@ class Api_Get(BaseHTTPRequestHandler):
         self.send_header("Content-type", "text/plain")
         self.end_headers()
         self.wfile.write(b"Status 404")
+
 
 host = "localhost"
 port = 8000
