@@ -24,8 +24,8 @@ class Api_Get(BaseHTTPRequestHandler):
         self.send_header("Content-Type", "application/json")
         self.end_headers()
         data_js = {"name": "John", "age": 30, "city": "New York"}
-        self.wfile.write(json.dumps(data_js))
-    
+        self.wfile.write(json.dumps(data_js).encode("utf-8"))
+
     def status(self):
         self.send_response(404)
         self.send_header("Content-type", "text/plain")
