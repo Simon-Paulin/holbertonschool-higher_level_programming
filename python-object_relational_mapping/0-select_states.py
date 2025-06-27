@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import sys
 import MySQLdb
 
@@ -18,3 +20,5 @@ cursor = database.cursor()
 cursor.exectute("SELECT * FROM states ORDERBY id ASC")
 for row in cursor.fetchall():
     print(row)
+cursor.close()
+database.close()
