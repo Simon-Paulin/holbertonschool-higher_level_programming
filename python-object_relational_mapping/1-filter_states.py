@@ -10,18 +10,18 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database = sys.argv[3]
 
-    data_base = MySQLdb.connect(
+    db = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=username,
         passwd=password,
-        data_base=database
+        db=database
     )
-    cur = data_base.cursor()
+    cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
 
     for row in cur.fetchall():
         print(row)
 
     cur.close()
-    data_base.close()
+    db.close()
