@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""
-alchimy
-"""
+"""Liste tous les objets State de la base hbtn_0e_6_usa"""
+
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -13,14 +12,14 @@ if __name__ == "__main__":
     db = sys.argv[3]
 
     engine = create_engine(
-        'mysql+mysqldb//{}:{}@localhost:3306/{}'.format(user, passwd, db),
+        "mysql+mysqldb://{}:{}@localhost:3306/{}".format(user, passwd, db),
         pool_pre_ping=True
     )
 
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    result = session.query(State).order_by(State.id).all()
+    results = session.query(State).order_by(State.id).all()
 
-for state in result:
-    print("{}: {}".format(state.id, state.name))
+    for state in results:
+        print("{}: {}".format(state.id, state.name))
