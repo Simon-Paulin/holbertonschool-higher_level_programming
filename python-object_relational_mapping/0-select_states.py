@@ -1,26 +1,35 @@
 #!/usr/bin/python3
-"""
-list all states
-"""
+"""List a database"""
+
 import sys
 import MySQLdb
 
-if __name__ == "__main__":
+
+def main():
+    """List a database"""
+
     username = sys.argv[1]
     password = sys.argv[2]
-    database_name = sys.argv[3]
+    db_name = sys.argv[3]
 
-    database = MySQLdb.connect(
+    db = MySQLdb.connect(
         host="localhost",
+        port=3306,
         user=username,
         passwd=password,
-        port=3306,
-        database=database_name
+        db=db_name
     )
 
-    cursor = database.cursor()
-    cursor.exectute("SELECT * FROM states ORDER BY id ASC")
-    for row in cursor.fetchall():
+    cur = db.cursor()
+
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+
+    for row in cur.fetchall():
         print(row)
-    cursor.close()
-    database.close()
+
+    cur.close()
+    db.close()
+
+
+if __name__ == "__main__":
+    main()
