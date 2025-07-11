@@ -32,7 +32,7 @@ class Api_Get(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "text/plain")
         self.end_headers()
-        self.wfile.write(b"OK")
+        self.wfile.write()
 
     def not_found(self):
         self.send_response(404)
